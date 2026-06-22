@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, Cambria, serif;
+  --font-luxury: "Playfair Display", serif;
+
+  /* Premium Wedding Color Palette Mapping */
+  --color-brand-pink-50: #FAF6EE;   /* Warm Ivory background */
+  --color-brand-pink-100: #F3EAD3;  /* Soft Champagne accent */
+  --color-brand-pink-200: #E5D5B8;  /* Sand/Gold highlight */
+  --color-brand-pink-300: #D4AF37;  /* Metallic Gold */
+  --color-brand-pink-400: #C59B27;  /* Vintage Gold */
+  --color-brand-pink-500: #A88015;  /* Deep Gold */
+  --color-brand-pink-600: #8A2542;  /* Berry/Crimson Rose */
+  --color-brand-pink-700: #741A33;  /* Deep Wine */
+  --color-brand-pink-800: #5C0E24;  /* Deep Burgundy */
+  --color-brand-pink-900: #3D0414;  /* Premium Imperial Burgundy */
+  
+  --color-gold-light: #F7EAD0;
+  --color-gold-dark: #AA8010;
+  --color-burgundy-light: #8E2C48;
+}
+
+:root {
+  /* Fluid Autoscale Base: Scales down on small screens, grows on larger screens */
+  font-size: 14px;
+}
+
+@media (min-width: 400px) {
+  :root {
+    font-size: 14.5px;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 15.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+body {
+  @apply bg-brand-pink-50 text-slate-800 font-sans antialiased selection:bg-brand-pink-300 selection:text-brand-pink-900;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-pink-50);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-pink-300);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-pink-400);
+}
+
+/* Text Shimmer Effect */
+.shimmer-gold {
+  background: linear-gradient(to right, #D4AF37 20%, #FFF5D1 40%, #FFF5D1 60%, #D4AF37 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.bg-wedding {
+  background: radial-gradient(circle at top right, var(--color-brand-pink-100), transparent), 
+              radial-gradient(circle at bottom left, var(--color-brand-pink-100), transparent);
+  background-color: var(--color-brand-pink-50);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.glass-dark {
+  background: rgba(61, 4, 20, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.card-shadow {
+  box-shadow: 0 15px 35px -15px rgba(138, 37, 66, 0.15), 0 5px 15px -5px rgba(212, 175, 55, 0.1);
+}
+
+/* Fancy Decorative Borders */
+.premium-border {
+  position: relative;
+}
+.premium-border::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Animations */
+.animate-spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+

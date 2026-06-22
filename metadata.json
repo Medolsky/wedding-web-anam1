@@ -1,0 +1,6 @@
+{
+  "name": "Undangan Anam & Anggi",
+  "description": "Website undangan pernikahan interaktif dan modern untuk Anam dan Anggi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
